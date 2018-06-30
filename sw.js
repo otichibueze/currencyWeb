@@ -5,7 +5,7 @@
 		event.waitUntil(
 		caches.open(staticCache).then(function(cache) {
 		  return cache.addAll([
-			'/',
+			'https://otichibueze.github.io/currencyWeb/',
 			'https://otichibueze.github.io/currencyWeb/index.html',
 			'https://otichibueze.github.io/currencyWeb/mStyle.css',
 			'https://otichibueze.github.io/currencyWeb/exchange.js',
