@@ -229,8 +229,8 @@
 
 						})
 						.catch(function(err) {
-						console.log(`Error failure  ${err}`);
-
+						//console.log(`Error failure  ${err}`);
+						getExchange(`${from_selected.value}_${to_selected.value}`);
 						});
 
 
