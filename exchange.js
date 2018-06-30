@@ -2,7 +2,7 @@
 
 	if('serviceWorker' in navigator) {
 	navigator.serviceWorker
-		   .register('https://github.com/otichibueze/currencyWeb/blob/gh-pages/sw.js')
+		   .register('/sw.js')
 		   .then(function() {
 		   console.log("Service Worker Registered");
 		   })
