@@ -14,6 +14,10 @@
 	
 	 LoadDropList();
 	 
+	 let message_box = document.getElementById("message");
+	 
+	 message_box.style.display = 'none';
+	 
 		//Prevent default button click
 		document.getElementById("convertbtn").addEventListener("click", function(event){
 		event.preventDefault()
@@ -66,11 +70,10 @@
     };
 	
 
-	function setRate(ex_value)
+	function setRate(value)
 	{
-		console.log(`rate is ${ex_value} from getRate function`);
-		
-				//here we get reference to html id's
+		//here we get reference to html id's
+				let message_box = document.getElementById("message");
 				let fromOptions = document.getElementById('from_currency');
 				let toOptions = document.getElementById('to_currency');
 				let text_description = document.getElementById('description');
@@ -87,11 +90,34 @@
 				Text : toOptions.options[toOptions.selectedIndex].textContent
 				};
 		
-				let value = ex_value;
+		
+		if (isNaN(Input_Amount)) {
+				text = "Input not valid, Please enter a integer value";
+				message_box.innerHTML = text;
+				message_box.style.display = 'block';
+				
+				text_description.innerHTML = "";
+				result.innerHTML = "";
+			} 
+			else if(from_selected.value === "0" || to_selected.value === "0")
+			{
+				text = "Please select currency to convert from list";
+				message_box.innerHTML = text;
+				message_box.style.display = 'block';
+				
+				text_description.innerHTML = "";
+				result.innerHTML = "";
+			}
+			else
+			{
+				document.getElementById("message").innerHTML = "";
+				message_box.style.display = 'none';
+    
+		
 						
 				console.log(`value on exhange class is ${value}`);
 
-			if(value != null)
+				if(value != null)
 				{
 					//get json returned value
 					const exchange_value = value;
@@ -108,13 +134,19 @@
 					result.innerHTML	 = `${to_selected.value} ${my_result}`;
 				}
 				else{
-					console.log('you are offline cannot get values');
+					text = "You need internet to get this exchange rate ";
+					message_box.innerHTML = text;
+					message_box.style.display = 'block';
+					
+					text_description.innerHTML = "";
+					result.innerHTML = "";
 				}
+			}
 	};
 	
 	function GetExchange() {
-	
 			//here we get reference to html id's
+			let message_box = document.getElementById("message");
 			let fromOptions = document.getElementById('from_currency');
 			let toOptions = document.getElementById('to_currency');
 			let text_description = document.getElementById('description');
@@ -130,6 +162,30 @@
 			value : toOptions.options[toOptions.selectedIndex].value,
 			Text : toOptions.options[toOptions.selectedIndex].textContent
 			};
+			
+			// textbox validation
+			if (isNaN(Input_Amount)) {
+				text = "Input not valid, Please enter a integer value";
+				message_box.innerHTML = text;
+				message_box.style.display = 'block';
+				
+				text_description.innerHTML = "";
+				result.innerHTML = "";
+			} 
+			else if(from_selected.value === "0" || to_selected.value === "0")
+			{
+				text = "Please select currency to convert from list";
+				message_box.innerHTML = text;
+				message_box.style.display = 'block';
+				
+				text_description.innerHTML = "";
+				result.innerHTML = "";
+			}
+			else{
+				
+				document.getElementById("message").innerHTML = "";
+				message_box.style.display = 'none';
+    
 			
 			
 			
@@ -182,6 +238,7 @@
 				} else {
 						getExchange(`${from_selected.value}_${to_selected.value}`);
 				}
+			}
 		
 			};
            
