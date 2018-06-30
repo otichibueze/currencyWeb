@@ -6,10 +6,10 @@
 		caches.open(staticCache).then(function(cache) {
 		  return cache.addAll([
 			'/',
-			'/index.html',
-			'/mStyle.css',
-			'/exchange.js',
-			'/mdatabase.js',
+			'https://otichibueze.github.io/currencyWeb/index.html',
+			'https://otichibueze.github.io/currencyWeb/mStyle.css',
+			'https://otichibueze.github.io/currencyWeb/exchange.js',
+			'https://otichibueze.github.io/currencyWeb/mdatabase.js',
 			'https://free.currencyconverterapi.com/api/v5/currencies?'
 		  ]);
 		})
