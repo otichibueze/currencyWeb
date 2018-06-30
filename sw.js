@@ -10,7 +10,10 @@
 			'https://otichibueze.github.io/currencyWeb/mStyle.css',
 			'https://otichibueze.github.io/currencyWeb/exchange.js',
 			'https://otichibueze.github.io/currencyWeb/mdatabase.js',
-			'https://free.currencyconverterapi.com/api/v5/currencies?'
+			'https://free.currencyconverterapi.com/api/v5/currencies?',
+			'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js',
+			'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css',
+			'https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js'
 		  ]);
 		})
 		);
